@@ -1,21 +1,12 @@
 export function battleHorde(zombies, humans) {
-  const zombieArray = zombies.split("").map(Number);
-  const humanArray = humans.split("").map(Number);
+  let z = 0,
+    h = 0;
 
-  const initialLength = zombieArray.length;
-
-  zombieArray.push(0);
-  humanArray.push(0);
-
-  for (let x = 0; x < initialLength; x++) {
-    zombieArray[x + 1] +=
-      zombieArray[x] > humanArray[x] ? zombieArray[x] - humanArray[x] : 0;
-    humanArray[x + 1] +=
-      zombieArray[x] < humanArray[x] ? humanArray[x] - zombieArray[x] : 0;
+  for (let x = 0; x < zombies.length; x++) {
+    z += Number(zombies[x]);
+    h += Number(humans[x]);
   }
-  if (zombieArray[initialLength] > humanArray[initialLength])
-    return zombieArray[initialLength] + "z";
-  else if (zombieArray[initialLength] < humanArray[initialLength])
-    return humanArray[initialLength] + "h";
+  if (z > h) return z - h + "z";
+  else if (z < h) return h - z + "h";
   return "x";
 }
