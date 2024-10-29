@@ -1,0 +1,14 @@
+{
+  "name": "halloweendev",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "author": "Pablo Rivera",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "vitest": "^2.1.4"
+  }
+}
